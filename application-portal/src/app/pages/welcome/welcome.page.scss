@@ -1,0 +1,54 @@
+.background-image {
+    --background: url(https://i.pinimg.com/564x/83/29/b1/8329b14930fdbf00855b6c9aef6803be.jpg
+) 0 0/175% 100% no-repeat;
+ }
+ 
+ .welcome-page {
+    ion-card {
+        background-color:#ffffff ;
+        color: #131312;
+        text-align: center;
+        width: 300px;
+        height: 600px;
+    }
+ 
+    // .ion-margin {
+    //     --margin: 30px
+    // }
+ 
+    .card-title {
+      position: absolute;
+      top: 10%;
+      font-size: 2.0em;
+      font-style: Lato lite;
+      width: 100%;
+      font-weight: bold;
+      color: #000000;
+      text-align: left;
+ 
+    }
+ 
+    .card-subtitle1 {
+      font-size: 1.5em;
+      font-style: Lato lite;
+      position: absolute;
+      top: 30%;
+      width: auto;
+      color: #000000;
+      text-align: left;
+    }
+    .card-subtitle2 {
+        font-size: 1.5em;
+        font-style: Lato lite;
+        position: absolute;
+        top: 60%;
+        width: auto;
+        color: #000000;
+        text-align: left;
+      }
+ 
+    .button {
+        top: 80%
+    }
+ 
+  }

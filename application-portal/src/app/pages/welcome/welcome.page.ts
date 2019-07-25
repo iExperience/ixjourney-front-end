@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.page.html',
-  styleUrls: ['./welcome.page.scss'],
+ selector: 'app-welcome',
+ templateUrl: './welcome.page.html',
+ styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage implements OnInit {
 
-  constructor() { }
+ constructor(public navCtrl: NavController) { }
 
-  ngOnInit() {
-  }
+ navToFields() {
+   this.navCtrl.navigateForward("fields")
+ }
+
+ ngOnInit() {
+ }
 
 }
