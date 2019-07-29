@@ -90,3 +90,48 @@ ion-content {
         margin-bottom: 30px;
     }
 }
+
+.course-options {
+
+    ion-card {
+        width: 400px;
+        height: 150px;
+        
+    }
+
+    img { 
+        height: 150px; 
+        object-fit: cover; 
+    }
+
+    .card-title {
+        font-size: 2.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        padding-left: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .card-subtitle {
+        font-size: 1.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+        position: absolute;
+        top: 80%;
+        width: 100%;
+        padding-left: 20px;
+        color: #fff;
+    }
+
+    .card-credits {
+        font-size: 1.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+        position: absolute;
+        top: 3%;
+        width: 100%;
+        padding-left: 290px;
+    }
+
+}
