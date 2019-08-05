@@ -4,7 +4,7 @@ import { Program } from '../../models/program/program'
 import { Location } from '../../models/location/location'
 import { Period } from '../../models/period/period'
 import { Session } from '../../models/session/session'
-import { Choices } from '../../models/choices/choices';
+import { ProgramChoice } from '../../models/choices/choices';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,13 @@ export class ChoicesService {
   location: Location;
   period: Period;
   session: Session;
-  choices: Choices;
+  programChoice: ProgramChoice;
 
   // arrays that hold info from backend
-  programs: Array<Program>;
-  locations: Array<Location>;
-  periods: Array<Period>;
-  sessions: Array<Session>;
+  allPrograms: Array<Program>;
+  allLocations: Array<Location>;
+  allPeriods: Array<Period>;
+  allSessions: Array<Session>;
 
   // fields arrays
   tech: Array<string> = ["Data Science Course", "Full Stack Coding Course", "Digital Design Course"];
@@ -40,8 +40,8 @@ export class ChoicesService {
       return response.json();
     })
     .then(data => {
-      this.programs = data;
-      console.log(this.programs);
+      this.allPrograms = data;
+      console.log(this.allPrograms);
     })
     .catch(err => {
       console.log(err);
@@ -53,8 +53,8 @@ export class ChoicesService {
       return response.json();
     })
     .then(data => {
-      this.locations = data;
-      console.log(this.locations);
+      this.allLocations = data;
+      console.log(this.allLocations);
     })
     .catch(err => {
       console.log(err);
@@ -66,8 +66,8 @@ export class ChoicesService {
       return response.json();
     })
     .then(data => {
-      this.periods = data;
-      console.log(this.periods);
+      this.allPeriods = data;
+      console.log(this.allPeriods);
     })
     .catch(err => {
       console.log(err);
@@ -79,8 +79,8 @@ export class ChoicesService {
       return response.json();
     })
     .then(data => {
-      this.sessions = data;
-      console.log(this.sessions);
+      this.allSessions = data;
+      console.log(this.allSessions);
     })
     .catch(err => {
       console.log(err);
@@ -112,19 +112,21 @@ export class ChoicesService {
 
   /* Basic Get/Set for all of the fields in Choices, UNTESTED */
 
+  // TODO for all Set: error checking to make sure id is valid???
+
   getProgram() {
     return this.program;
   }
 
   setProgram(program_id: number) {
-    for (var i = 0; i < this.programs.length; i++) {
-      if (this.programs[i].id == program_id) {
-        // set choices' program id
-        this.choices.program_id = this.programs[i].id;
-        // set program variable 
-        this.program = this.programs[i];
-      }
-    }
+    var found = this.allPrograms.find(function(element) {
+      return (element.id == program_id);
+    });
+
+    // set choices' program id
+    this.programChoice.program_id = program_id;
+    // set program variable 
+    this.program = found;
   }
 
   getLocation() {
@@ -132,14 +134,14 @@ export class ChoicesService {
   }
 
   setLocation(location_id: number) {
-    for (var i = 0; i < this.locations.length; i++) {
-      if (this.locations[i].id == location_id) {
-        // set choices' location id
-        this.choices.location_id = this.locations[i].id;
-        // set location variable
-        this.location = this.locations[i];
-      }
-    }
+    var found = this.allLocations.find(function(element) {
+      return (element.id == location_id);
+    });
+
+    // set choices' program id
+    this.programChoice.location_id = location_id;
+    // set program variable 
+    this.location = found;
   }
 
   getPeriod() {
@@ -147,14 +149,14 @@ export class ChoicesService {
   }
 
   setPeriod(period_id: number) {
-    for (var i = 0; i < this.periods.length; i++) {
-      if (this.periods[i].id == period_id) {
-        // set choices' period id
-        this.choices.period_id = this.periods[i].id;
-        // set period variable
-        this.period = this.periods[i];
-      }
-    }
+    var found = this.allPeriods.find(function(element) {
+      return (element.id == period_id);
+    });
+
+    // set choices' program id
+    this.programChoice.period_id = period_id;
+    // set program variable 
+    this.period = found;
   }
 
   getSession() {
@@ -162,31 +164,31 @@ export class ChoicesService {
   }
 
   setSession(session_id: number) {
-    for (var i = 0; i < this.sessions.length; i++) {
-      if (this.sessions[i].id == session_id) {
-        // set choices' session id
-        this.choices.session_id = this.sessions[i].id;
-        // set session variable
-        this.session = this.sessions[i];
-      }
-    }
+    var found = this.allSessions.find(function(element) {
+      return (element.id == session_id);
+    });
+
+    // set choices' program id
+    this.programChoice.session_id = session_id;
+    // set program variable 
+    this.session = found;
   }
 
   getFinAid() {
-    return this.choices.finAid;
+    return this.programChoice.finAid;
   }
 
   setFinAid(finAid: Boolean) {
-    this.choices.finAid = finAid;
+    this.programChoice.finAid = finAid;
   }  
 
   getApplicationChoice() {
-    return this.choices.applicationChoice;
+    return this.programChoice.applicationChoice;
   }
 
   // QUESTION: should applicationChoice be a string? or boolean? what type????
   setApplicationChoice(applicationChoice: string) {
-    this.choices.applicationChoice = applicationChoice;
+    this.programChoice.applicationChoice = applicationChoice;
   }  
 
 
@@ -202,10 +204,10 @@ export class ChoicesService {
     else if (field == "design") { fieldSelected = this.design; }
 
     // push all field-related programs to new array
-    for (var i = 0; i < this.programs.length; i++) {
+    for (var i = 0; i < this.allPrograms.length; i++) {
       for (var j = 0; i < fieldSelected.length; j++) {
-        if (this.programs[i].name == fieldSelected[j]) {
-          specificPrograms.push(this.programs[i]);
+        if (this.allPrograms[i].name == fieldSelected[j]) {
+          specificPrograms.push(this.allPrograms[i]);
         }
       }
     }
@@ -218,20 +220,20 @@ export class ChoicesService {
 
   // helper for getDatesByProgramId
   getPeriodById(program_id: number) {
-    for (var i = 0; i < this.programs.length; i++) {
-      if (this.programs[i].id == program_id) {
-        return this.programs[i];
-      }
-    }
+    var found = this.allPrograms.find(function(element) {
+      return (element.id == program_id);
+    });
+
+    return found;
   }
 
   getDatesByProgramId(program_id: number) {
     var specificSessions = [];
     
     // get all sessions with program_id
-    for (var i = 0; i < this.sessions.length; i++) {
-      if (this.sessions[i].program_id = program_id) {
-        specificSessions.push(this.sessions[i]);
+    for (var i = 0; i < this.allSessions.length; i++) {
+      if (this.allSessions[i].program_id = program_id) {
+        specificSessions.push(this.allSessions[i]);
       }
     }
 
@@ -249,20 +251,20 @@ export class ChoicesService {
 
   // helper for getLocationsByProgramId
   getLocationById(location_id: number) {
-    for (var i = 0; i < this.locations.length; i++) {
-      if (this.locations[i].id == location_id) {
-        return this.locations[i];
-      }
-    }
+    var found = this.allLocations.find(function(element) {
+      return (element.id == location_id);
+    });
+
+    return found;
   }
-  
+
   getLocationsByProgramId(program_id: number){
     var specificSessions = [];
     
     // get all sessions with program_id
-    for (var i = 0; i < this.sessions.length; i++) {
-      if (this.sessions[i].program_id = program_id) {
-        specificSessions.push(this.sessions[i]);
+    for (var i = 0; i < this.allSessions.length; i++) {
+      if (this.allSessions[i].program_id = program_id) {
+        specificSessions.push(this.allSessions[i]);
       }
     }
 

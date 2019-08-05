@@ -1,4 +1,4 @@
-export class Choices {
+export class ProgramChoice {
     public id: number;
     public user_id: number;
     public program_id: number;
