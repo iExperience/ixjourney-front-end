@@ -1,7 +1,10 @@
 export class Choices {
-    program: string; //immerse or accelerate
-    course: string; //ex. full stack
-    location: string; // ex. Cape Town, South Africa
-    session: number; //1 or 2
-    finAid: Boolean; //yes or no
+    public id: number;
+    public user_id: number;
+    public program_id: number;
+    public location_id: number;
+    public period_id: number;
+    public session_id: number;
+    public finAid: Boolean; //yes or no
+    public applicationChoice: string;
 }
