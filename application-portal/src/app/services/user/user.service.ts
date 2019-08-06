@@ -19,7 +19,7 @@ export class UserService {
 
   constructor() { }
 
-  // Basic Set/Get for user and all fields
+  // Basic Get for User's fields, Get/Set for User
   getUser() {
     return this.user;
   }
@@ -32,82 +32,32 @@ export class UserService {
     return this.user.id;
   }
 
-  // not sure when we would use this? but i included it
-  setId(id: number) {
-    this.user.id = id;
-    this.id = id;
-  }
-
   getFirstName() {
     return this.user.firstName;
-  }
-
-  setFirstName(fname: string) {
-    this.user.firstName = fname;
-    this.firstName = fname;
   }
 
   getLastName() {
     return this.user.lastName;
   }
 
-  setLastName(lname: string) {
-    this.user.lastName = lname;
-    this.lastName = lname;
-  }
-
   getPhoneNum() {
     return this.user.phoneNum;
-  }
-
-  setPhoneNum(num: string) {
-    this.user.phoneNum = num;
-    this.phoneNum = num;
   }
 
   getEmail() {
     return this.user.email;
   }
 
-  setEmail(mail: string) {
-    this.user.email = mail;
-    this.email = mail;
-  }
-
-  // are password get and sets required?
-  getPassword() {
-    return this.user.password;
-  }
-
-  setPassword(pw: string) {
-    this.user.password = pw;
-    this.password = pw;
-  }
-
   getUni() {
     return this.user.university;
-  }
-
-  setUni(uni: string) {
-    this.user.university = uni;
-    this.university = uni;
   }
 
   getGradYear() {
     return this.user.gradYear;
   }
 
-  setGradYear(year: number) {
-    this.user.gradYear = year;
-    this.gradYear = year;
-  }
-
   getBirthDate() {
     return this.user.birthDate;
   }
 
-  setBirthDate(bday: string) {
-    this.user.birthDate = bday;
-    this.birthDate = bday;
-  }
 }
