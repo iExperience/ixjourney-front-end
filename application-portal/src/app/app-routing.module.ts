@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'course-info', loadChildren: './pages/course-info/course-info.module#CourseInfoPageModule' },
   { path: 'course-cities', loadChildren: './pages/course-cities/course-cities.module#CourseCitiesPageModule' },
   { path: 'youroptions', loadChildren: './pages/youroptions/youroptions.module#YouroptionsPageModule' },
+  { path: 'city-info', loadChildren: './pages/city-info/city-info.module#CityInfoPageModule' }
 ];
 
 @NgModule({
