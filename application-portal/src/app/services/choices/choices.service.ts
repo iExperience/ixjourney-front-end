@@ -4,7 +4,7 @@ import { Program } from '../../models/program/program'
 import { Location } from '../../models/location/location'
 import { Period } from '../../models/period/period'
 import { Session } from '../../models/session/session'
-import { ProgramChoice } from '../../models/choices/choices';
+import { ProgramChoice } from '../../models/programChoice/programChoice';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class ChoicesService {
   location: Location;
   period: Period;
   session: Session;
-  programChoice: ProgramChoice;
+  programChoice: ProgramChoice = new ProgramChoice;
 
   // arrays that hold info from backend
   allPrograms: Array<Program>;
@@ -205,7 +205,7 @@ export class ChoicesService {
 
     // push all field-related programs to new array
     for (var i = 0; i < this.allPrograms.length; i++) {
-      for (var j = 0; i < fieldSelected.length; j++) {
+      for (var j = 0; j < fieldSelected.length; j++) {
         if (this.allPrograms[i].name == fieldSelected[j]) {
           specificPrograms.push(this.allPrograms[i]);
         }
@@ -219,9 +219,9 @@ export class ChoicesService {
   /* COURSES -> COURSE INFO, UNTESTED */
 
   // helper for getDatesByProgramId
-  getPeriodById(program_id: number) {
-    var found = this.allPrograms.find(function(element) {
-      return (element.id == program_id);
+  getPeriodById(period_id: number) {
+    var found = this.allPeriods.find(function(element) {
+      return (element.id == period_id);
     });
 
     return found;
@@ -232,18 +232,23 @@ export class ChoicesService {
     
     // get all sessions with program_id
     for (var i = 0; i < this.allSessions.length; i++) {
-      if (this.allSessions[i].program_id = program_id) {
+      if (this.allSessions[i].program_id == program_id) {
         specificSessions.push(this.allSessions[i]);
       }
     }
 
     var specificPeriods = [];
+
     // get all periods from the specific sessions
-    for (var i = 0; i < specificSessions.length; i++) {
-      var specificPeriod = this.getPeriodById(specificSessions[i].program_id);
-      specificPeriods.push(specificPeriod);
-    }
-    
+    for (var i = 0; i < this.allPeriods.length; i++) {
+      for (var j = 0; j < specificSessions.length; j++) {
+        if (this.allPeriods[i].id == specificSessions[j].period_id) {
+          var specificPeriod = this.getPeriodById(specificSessions[i].period_id);
+          specificPeriods.push(specificPeriod);
+          break;
+        }
+      }
+    }    
     return specificPeriods;
   }
 
@@ -263,18 +268,23 @@ export class ChoicesService {
     
     // get all sessions with program_id
     for (var i = 0; i < this.allSessions.length; i++) {
-      if (this.allSessions[i].program_id = program_id) {
+      if (this.allSessions[i].program_id == program_id) {
         specificSessions.push(this.allSessions[i]);
       }
     }
 
     var specificLocations = [];
-    // get all locations from the specific sessions
-    for (var i = 0; i < specificSessions.length; i++) {
-      var specificLocation = this.getLocationById(specificSessions[i].location_id);
-      specificLocations.push(specificLocation);
-    }
     
+    // get all locations from the specific sessions
+    for (var i = 0; i < this.allLocations.length; i++) {
+      for (var j = 0; j < specificSessions.length; j++) {
+        if (this.allLocations[i].id == specificSessions[j].location_id) {
+          var specificLocation = this.getLocationById(this.allLocations[i].id);
+          specificLocations.push(specificLocation);
+          break;
+        }
+      }
+    }  
     return specificLocations;
 
   }

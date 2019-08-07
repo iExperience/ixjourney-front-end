@@ -15,10 +15,9 @@ export class WelcomePage implements OnInit {
    ) { }
 
  navToFields() {
-   this.navCtrl.navigateForward("fields")
+   this.navCtrl.navigateForward("fields");
  }
 
- ngOnInit() {
- }
+ ngOnInit() { }
 
 }
