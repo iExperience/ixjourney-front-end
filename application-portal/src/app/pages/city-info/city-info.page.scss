@@ -1,0 +1,132 @@
+.city-info-header {
+
+    ion-card {
+        max-width: 700px;
+        width: 100%;
+        height: auto;
+    }
+
+    img { 
+        height: 150px; 
+        object-fit: cover; 
+    }
+
+    .card-title {
+        font-size: 2.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 300;
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        padding-left: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .card-subtitle {
+        font-size: 1.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+        font-weight: 300;
+        position: absolute;
+        top: 80%;
+        width: 100%;
+        padding-left: 20px;
+        color: #fff;
+    }
+
+}
+
+ion-content {
+    --ion-background-color:#f3f6f8;
+}
+
+.city-info-content {
+
+    ion-card {
+        background-color: white;
+        max-width: 700px;
+        width: 100%;
+        height: auto;
+    }
+
+    ion-avatar {
+        position: relative;
+        top: -55px;
+        left: 93px;
+    }
+
+    ion-button {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    hr {
+        width: 60px;
+        height: 2px;
+        background-color:#F9007A;
+        opacity: 0.5;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pictures {
+        img {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    
+        p {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    .alum { 
+        max-width: 700px;
+        font-size: 15px; 
+        width: 300px;
+        border: 15px;
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background-color:#f3f6f8; 
+    } 
+
+    .dates {
+        text-align: center;
+        font-size: 15px; 
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}
+
+.city-options {
+
+    ion-card {
+        width: 400px;
+        height: 150px;
+        
+    }
+
+    img { 
+        height: 150px; 
+        object-fit: cover; 
+    }
+
+    .card-title {
+        font-size: 2.0em;
+        font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 300;
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        padding-left: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+}
