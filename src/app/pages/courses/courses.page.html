@@ -4,37 +4,36 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content class="base-styling">
-  <div class="cool-header"><b>Nice. You have three tech-focused course-internship programs to choose from this summer.</b></div>
-  <div class="cool-text">Tap on one to learn more.</div>
-  <div class="cool-text"><i>No prior experience is required for any of these programs.</i></div>
-  <ion-grid style="height: 57%">
-    <ion-row justify-content-center align-items-center style="height: 100%">
-      <ion-card (click)="buttonClick()">
-        <div class="card-credits">
-          <ion-button size="small" color="light">6 credits</ion-button>
+<div class='container'>
+    <div class='row'>
+      <div class='col-10 offset-1'>
+          <h4 class='font-weight-bold mb-4 mt-5'>Nice. You have three tech-focused course-internship programs to choose from this summer.</h4>
+          <p class='mb-3'>Tap on one to learn more.</p>
+          <p class='mb-3'><i>No prior experience is required for any of these programs.</i></p>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-12'>
+        <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg')">
+          <h5 class="text pt-5 pl-3 font-weight-bold">
+            Full Stack Coding
+          </h5>
         </div>
-        <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-        <div class="card-title">Full Stack Coding</div>
-        <div class="card-subtitle">Available in Cape Town and Lisbon</div>
-      </ion-card>
-      <ion-card (click)="buttonClick()">
-          <div class="card-credits">
-            <ion-button size="small" color="light">6 credits</ion-button>
-          </div>
-          <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-          <div class="card-title">Data Science</div>
-          <div class="card-subtitle">Available in Cape Town, Lisbon, Tel Aviv</div>
-      </ion-card>
-      <ion-card (click)="buttonClick()" >
-          <div class="card-credits">
-            <ion-button size="small" color="light">6 credits</ion-button>
-          </div>
-          <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-          <div class="card-title">Product Management</div>
-          <div class="card-subtitle">Available in Cape Town</div>
-      </ion-card>
-    </ion-row>
-  </ion-grid>
+      </div>
+      <div class='col-12'>
+        <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg')">
+          <h5 class="text pt-5 pl-3 font-weight-bold">
+            Data Science
+          </h5>
+        </div>
+      </div>
+      <div class='col-12'>
+        <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg')">
+          <h5 class="text pt-5 pl-3 font-weight-bold">
+            Product Management
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</ion-content>

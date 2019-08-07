@@ -1,23 +1,32 @@
 <!-- NAVBAR UP HERE -->
-<ion-content class='base-styling'>
-  <div class='cool-header'><b>What field are you most interested in exploring?</b></div>
-  <div class='cool-text'>Tap on one to learn more about your options this summer. Don't worry if you aren't sure about what to choose right now, this can be changed later.</div>
-  <div>
-    <ion-grid style="height: 100%">
-      <ion-row justify-content-center align-items-center style="height: 100%">
-        <ion-card (click) = 'isbuttonClicked()'>
-          <img src = 'http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg'>
-          <div class='card-title'>Technology</div>
-        </ion-card>
-        <ion-card (click) = 'isbuttonClicked()'>
-          <img src = 'https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg?ixlib=rb-1.1.0&rect=273%2C0%2C2639%2C1379&q=45&auto=format&w=926&fit=clip'>
-          <div class = 'card-title'>Business</div>
-        </ion-card>
-        <ion-card (click) = 'isbuttonClicked()'>
-          <img src = 'https://iso.500px.com/wp-content/uploads/2015/11/photo-129299193.jpg'>
-          <div class = 'card-title'>Design</div>
-        </ion-card>
-      </ion-row>
-    </ion-grid>
+<div class='container'>
+  <div class='row'>
+    <div class='col-10 offset-1'>
+        <h4 class='font-weight-bold mb-4 mt-5'>What field are you most interested in exploring?</h4>
+        <p class='mb-5'>Tap on one to learn more about your options this summer. Don't worry if you aren't sure about what to choose right now, this can be changed later.</p>
+    </div>
   </div>
- </ion-content>
+  <div class='row'>
+    <div class='col-12'>
+      <div class='image-btn rounded' (click) = 'isbuttonClicked()' style="background-image: url('assets/images/technology.jpg')">
+        <h5 class="text p-3">
+          Technology
+        </h5>
+      </div>
+    </div>
+    <div class='col-12'>
+      <div class='image-btn rounded' (click) = 'isbuttonClicked()' style="background-image: url('http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg')">
+        <h5 class="text pt-3 pl-3">
+          Business
+        </h5>
+      </div>
+    </div>
+    <div class='col-12'>
+      <div class='image-btn rounded' (click) = 'isbuttonClicked()' style="background-image: url('http://cdn2.ixperience.co.za/assets/home/pillar-learn-f4742d7a3d241364bda73f8a9fcacd7315ea612d3334d57edbb3714c4bf20f4e.jpg')">
+        <h5 class="text pt-3 pl-3">
+          Design
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
