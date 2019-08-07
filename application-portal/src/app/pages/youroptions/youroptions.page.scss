@@ -1,4 +1,4 @@
-.fields-page {
+.youroptions-page {
 
 	.cool-header {
 		padding-top: 20px;
@@ -18,18 +18,19 @@
 
 	ion-card {
 		position: center;
-		width: 400px;
+		width: 350px;
 	}
 	
 	img {
-		height: 100px;
+		height: 130px;
+		padding-right: 250px;
 	}
-	
+
 	.card-title {
 		font-size: 1.5em;
 		font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		position: absolute;
-		top: 50%;
+		top: 65%;
 		width: 100%;
 		padding-left: 20px;
 		font-weight: bold;
@@ -38,16 +39,38 @@
 		-webkit-text-stroke-color: black;
 	}
 
-	.card-subtitle {
-		font-size: 1.0em;
-		font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+
+	.card-text {
+		font-size: 1em;
+		font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		position: absolute;
-		top: 80%;
+		top: 10%;
 		width: 100%;
-		padding-left: 20px;
-		color: #fff;
+		padding-left: 115px;
+		color: black;
+		font-weight: lighter;
 	}
 
+	.ion-button {
+		height: 20px;
+		position: absolute;
+		width: 75%;
+		padding-left: 150px;
+		font-size: 0.5em;
+		font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		font-weight: bold;
+	}
+
+	hr {
+		width: 20px;
+		height: 1px;
+		background-color:#F9007A;
+		opacity: 0.5;
+		width: 100%;
+		padding-left: 115px;
+		font-weight: bold;
+	}
+	
 	.headerstyle {
 		font-family: 'Lato', sans-serif;
 		src: "https://fonts.googleapis.com/css?family=Lato:300,400,700";
