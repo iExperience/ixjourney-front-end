@@ -9,6 +9,7 @@
     
     ion-content {
         background-color: #f3f6f8;
+        overflow: scroll;
     }
 
     .cool-header {
@@ -17,6 +18,7 @@
         padding-right: 40px;
         font-size: 20px;
         font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: bold;
     }
     
       .cool-text {
@@ -29,7 +31,7 @@
       }
     
       ion-card {
-        margin-bottom: -8 px !important;
+        margin-bottom: -10px !important;
         position: center;
         width: 400px;
       }
