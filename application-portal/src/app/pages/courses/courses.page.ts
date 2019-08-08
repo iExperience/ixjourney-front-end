@@ -19,11 +19,9 @@ export class CoursesPage implements OnInit {
     ) { 
       // get all field-related courses + field name
       this.courses = this.choicesService.getFieldPrograms();
-      console.log(this.courses);
 
       // set field to last element (which is field's name)
       this.field = this.courses[this.courses.length-1];
-      console.log(this.field);
 
       // remove field name - we don't need it anymore!
       this.courses.pop();
@@ -54,8 +52,6 @@ export class CoursesPage implements OnInit {
 
           // if we're at the last city, add an "and" before the last city
           else if (j == (cities.length - 1)) {
-            console.log(j);
-            console.log(cities.length - 1);
             availableCities = availableCities + "and " + cities[j].name;
           }
 
@@ -69,8 +65,6 @@ export class CoursesPage implements OnInit {
 
         this.availableCourses.push(array_elem);
       }
-
-      console.log(this.availableCourses);
     }
 
   ngOnInit() {
@@ -78,7 +72,6 @@ export class CoursesPage implements OnInit {
 
   navToCourseInfo(index, course) {
     this.choicesService.setProgram(course);
-    console.log(course);
     this.navCtrl.navigateForward('course-info');
   }
 
