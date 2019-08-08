@@ -12,6 +12,7 @@ import { ProgramChoice } from '../../models/programChoice/programChoice';
 export class ChoicesService {
   // these store current data
   user: User;
+  field: string;
   program: Program;
   location: Location;
   period: Period;
@@ -34,8 +35,6 @@ export class ChoicesService {
   tech: Array<string> = ["Data Science Course", "Full Stack Coding Course"];
   business: Array<string> = ["Management Consulting Course", "Investment Finance Course", "Product Management Course"];
   design: Array<string> = ["Digital Design Course"];
-
-
 
   constructor() { 
     // Constructor populates all arrays, TESTED
@@ -133,6 +132,14 @@ export class ChoicesService {
     this.programChoice.program_id = program_id;
     // set program variable 
     this.program = found;
+  }
+
+  getField() {
+    return this.field;
+  }
+
+  setField(field: string) {
+    this.field = field;
   }
 
   getLocation() {
