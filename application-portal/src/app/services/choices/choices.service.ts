@@ -18,6 +18,12 @@ export class ChoicesService {
   session: Session;
   programChoice: ProgramChoice = new ProgramChoice;
 
+  // fieldPrograms stores current programs based on field choice
+  fieldPrograms: Array<Program>;
+
+  // programLocations stores current locations based on program choice
+  programLocations: Array<Location>;
+
   // arrays that hold info from backend
   allPrograms: Array<Program>;
   allLocations: Array<Location>;
@@ -25,7 +31,7 @@ export class ChoicesService {
   allSessions: Array<Session>;
 
   // fields arrays
-  tech: Array<string> = ["Data Science Course", "Full Stack Coding Course", "Digital Design Course"];
+  tech: Array<string> = ["Data Science Course", "Full Stack Coding Course"];
   business: Array<string> = ["Management Consulting Course", "Investment Finance Course", "Product Management Course"];
   design: Array<string> = ["Digital Design Course"];
 
@@ -190,6 +196,22 @@ export class ChoicesService {
   setApplicationChoice(applicationChoice: string) {
     this.programChoice.applicationChoice = applicationChoice;
   }  
+
+  getFieldPrograms() {
+    return this.fieldPrograms;
+  }
+
+  setFieldPrograms(fieldPrograms: Array<Program>) {
+    this.fieldPrograms = fieldPrograms;
+  }
+
+  getProgramLocations() {
+    return this.programLocations;
+  }
+
+  setProgramLocations(programLocations: Array<Location>) {
+    this.programLocations = programLocations;
+  }
 
 
   /* FIELDS -> COURSES, UNTESTED */
