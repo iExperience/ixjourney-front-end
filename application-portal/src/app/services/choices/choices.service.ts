@@ -244,6 +244,30 @@ export class ChoicesService {
     return specificPrograms;
   }
 
+  addAvailableCities(cities) {
+    // create cities subtitle
+    let availableCities = "";
+    
+    for (var j = 0; j < cities.length; j++) {
+      // if only one city, we don't want commas
+      if (cities.length == 1) {
+        availableCities = cities[j].name;
+        break;
+      }
+
+      // if we're at the last city, add an "and" before the last city
+      else if (j == (cities.length - 1)) {
+        availableCities = availableCities + "and " + cities[j].name;
+      }
+
+      // otherwise, add city name and a comma to the string
+      else {
+        availableCities = availableCities + cities[j].name + ", ";
+      }
+    }
+    return availableCities;
+  }
+
 
   /* COURSES -> COURSE INFO, UNTESTED */
 

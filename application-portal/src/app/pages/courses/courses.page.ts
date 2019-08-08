@@ -39,9 +39,10 @@ export class CoursesPage implements OnInit {
 
       // get all cities by program id
       let cities = this.choicesService.getLocationsByProgramId(this.courses[i].id);
+      this.choicesService.setProgramLocations(cities);
 
       // get cities available in this course
-      let availableCities = this.addAvailableCities(cities);
+      let availableCities = this.choicesService.addAvailableCities(cities);
 
       // push course and cities to array_elem
       array_elem.push(this.courses[i]);
@@ -51,32 +52,8 @@ export class CoursesPage implements OnInit {
     }
   }
 
-  addAvailableCities(cities) {
-    // create cities subtitle
-    let availableCities = "";
-    
-    for (var j = 0; j < cities.length; j++) {
-      // if only one city, we don't want commas
-      if (cities.length == 1) {
-        availableCities = cities[j].name;
-        break;
-      }
-
-      // if we're at the last city, add an "and" before the last city
-      else if (j == (cities.length - 1)) {
-        availableCities = availableCities + "and " + cities[j].name;
-      }
-
-      // otherwise, add city name and a comma to the string
-      else {
-        availableCities = availableCities + cities[j].name + ", ";
-      }
-    }
-    return availableCities;
-  }
-
   navToCourseInfo(index, course) {
-    this.choicesService.setProgram(course);
+    this.choicesService.setProgram(course[0].id);
     this.navCtrl.navigateForward('course-info');
   }
 

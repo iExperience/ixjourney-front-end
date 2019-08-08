@@ -14,7 +14,7 @@
   <div class="cool-text">Tap on one to learn more.</div>
   <div class="cool-text"><i>No prior experience is required for any of these programs.</i></div>
   <ion-grid style="height: 100%">
-    <ion-row *ngFor="let course of availableCourses let i=index;" (click)="navToCourseInfo(i, course)">
+    <ion-row *ngFor="let course of availableCourses let i=index;" (click)="navToCourseInfo(index, course)">
       <ion-card>
         <div class="card-credits">
           <ion-button size="small" color="light">6 credits</ion-button>
