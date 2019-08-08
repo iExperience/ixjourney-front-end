@@ -5,36 +5,23 @@
 </ion-header> -->
 
 <ion-content class="courses-page">
-  <div class="cool-header"><b>Nice. You have three tech-focused course-internship programs to choose from this summer.</b></div>
+  <div class="cool-header" [ngPlural]="numberOfCourses">
+    <b>Nice. You have {{numberOfCourses}} {{field}}-focused course-internship
+    <ng-template ngPluralCase="=1">program</ng-template>
+    <ng-template ngPluralCase="other">programs</ng-template>
+     to choose from this summer.</b>
+  </div>
   <div class="cool-text">Tap on one to learn more.</div>
   <div class="cool-text"><i>No prior experience is required for any of these programs.</i></div>
   <ion-grid style="height: 100%">
-    <ion-row justify-content-center align-items-center style="height: 100%">
-      <ion-card (click)="buttonClick()">
+    <ion-row *ngFor="let course of availableCourses let i=index;" (click)="navToCourseInfo(i, course)">
+      <ion-card>
         <div class="card-credits">
           <ion-button size="small" color="light">6 credits</ion-button>
         </div>
         <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-        <div class="card-title">Full Stack Coding</div>
-        <div class="card-subtitle">Available in Cape Town and Lisbon</div>
-      </ion-card>
-
-      <ion-card (click)="buttonClick()">
-          <div class="card-credits">
-            <ion-button size="small" color="light">6 credits</ion-button>
-          </div>
-          <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-          <div class="card-title">Data Science</div>
-          <div class="card-subtitle">Available in Cape Town, Lisbon, Tel Aviv</div>
-      </ion-card>
-
-      <ion-card (click)="buttonClick()" >
-          <div class="card-credits">
-            <ion-button size="small" color="light">6 credits</ion-button>
-          </div>
-          <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-welcome-to-cape-town-104168527.jpg?sharp=10&vib=20&w=1200"/>
-          <div class="card-title">Product Management</div>
-          <div class="card-subtitle">Available in Cape Town</div>
+        <div class="card-title">{{course[0].name}}</div>
+        <div class="card-subtitle">Available in {{course[1]}}</div>
       </ion-card>
     </ion-row>
   </ion-grid>
