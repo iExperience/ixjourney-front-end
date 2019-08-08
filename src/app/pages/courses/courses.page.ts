@@ -16,7 +16,6 @@ export class CoursesPage implements OnInit {
   }
 
   buttonClick() {
-    console.log("button clicked");
     this.navCtrl.navigateForward('course-info');
   }
 
