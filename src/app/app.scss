@@ -11,6 +11,7 @@ html, body {
     font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: light;
     --ion-font-family: "Lato", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #f3f6f8;
 }
 
 .image-header {
@@ -40,9 +41,6 @@ html, body {
 .pink-btn {
     background-color: #F9007A;
     display: inline-block;
-    .text {
-        color: white;
-    }
 }
 
 // .base-styling {

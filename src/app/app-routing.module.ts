@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'courses', loadChildren: './pages/courses/courses.module#CoursesPageModule' },
   { path: 'course-info', loadChildren: './pages/course-info/course-info.module#CourseInfoPageModule' },
   { path: 'course-cities', loadChildren: './pages/course-cities/course-cities.module#CourseCitiesPageModule' },
+  { path: 'financialaid', loadChildren: './pages/financialaid/financialaid.module#FinancialaidPageModule' },
   { path: 'youroptions', loadChildren: './pages/youroptions/youroptions.module#YouroptionsPageModule' },
 ];
 
