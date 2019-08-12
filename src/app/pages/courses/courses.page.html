@@ -1,0 +1,53 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<div class='container'>
+    <div class='row'>
+      <div class='col-10 offset-1' [ngPlural]="numberOfCourses">
+          <h4 class='font-weight-bold mb-4 mt-5'>Nice. You have {{numberOfCourses}} {{field}}-focused course-internship 
+              <ng-template ngPluralCase="=1">program</ng-template>
+              <ng-template ngPluralCase="other">programs</ng-template> 
+            to choose from this summer.</h4>
+          <p class='mb-3 font-weight-lighter'>Tap on one to learn more.</p>
+          <p class='mb-3'><i>No prior experience is required for any of these programs.</i></p>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-12' *ngFor="let course of availableCourses let i=index;" (click)="navToCourseInfo(index, course)">
+        <div class='image-btn rounded mb-3' style="background-image: url('assets/images/fullstack.jpg')">
+        <div class='text-right pr-3 pt-2'>
+          <button>6 credits</button>
+        </div>
+        <h5 class="text pb-3 px-3">
+            {{course[0].name}}<br>
+            Available in {{course[1]}}
+        </h5>
+        </div>
+      </div>
+      <!-- <div class='col-12 mt-3'>
+        <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn0.ixperience.co.za/assets/internship/teach-57b7748312633a0df83c337faf5c350475d9e5a278fbfc1eb13727ad746ad601.jpg')">
+          <div class='text-right pr-3 pt-2'>
+            <button>6 credits</button>
+          </div>
+          <h5 class="text p-3">
+            Data Science
+
+          </h5>
+        </div>
+      </div>
+      <div class='col-12 mt-3'>
+        <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg')">
+          <div class='text-right pr-3 pt-2'>
+            <button>6 credits</button>
+          </div>
+          <h5 class="text p-3">
+            Product Management
+          </h5>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
