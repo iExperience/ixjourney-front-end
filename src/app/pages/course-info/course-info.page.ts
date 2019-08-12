@@ -69,6 +69,8 @@ export class CourseInfoPage implements OnInit {
 
   navToCourseInfo(index, course) {
     this.choicesService.setProgram(course[0].id);
+    let cities = this.choicesService.getLocationsByProgramId(course[0].id);
+    this.choicesService.setProgramLocations(cities);
     this.getCourseInfo();
     this.content.scrollToTop();
   }
