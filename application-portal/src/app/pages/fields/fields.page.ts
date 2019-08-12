@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ChoicesService } from '../../services/choices/choices.service';
 
 @Component({
  selector: 'app-fields',
@@ -8,13 +9,18 @@ import { NavController } from '@ionic/angular';
 })
 export class FieldsPage implements OnInit {
 
- constructor(public navCtrl: NavController) { }
+  constructor(
+    public navCtrl: NavController,
+    public choicesService: ChoicesService
+  ) { }
 
- isbuttonClicked() {
-   this.navCtrl.navigateForward("courses")
- }
+  fieldClick(field: string) {
+    let fieldCourses = this.choicesService.getProgramsByField(field);
+    this.choicesService.setFieldPrograms(fieldCourses);
+    this.choicesService.setField(field);
+    this.navCtrl.navigateForward("courses");
+  }
 
- ngOnInit() {
- }
+  ngOnInit() {}
 
 }
