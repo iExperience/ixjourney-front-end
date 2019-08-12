@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ChoicesService } from '../../services/choices/choices.service';
 
 @Component({
   selector: 'app-financialaid',
@@ -8,9 +9,14 @@ import { NavController } from '@ionic/angular';
 })
 export class FinancialaidPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private choicesService: ChoicesService) { }
 
   ngOnInit() {
+  }
+
+  setFinAid(choice: Boolean) {
+    this.choicesService.setFinAid(choice);
+    this.navToOptions();
   }
 
   navToOptions() {
