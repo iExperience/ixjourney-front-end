@@ -1,6 +1,11 @@
 .card-img {
-    background-size: cover;
     border-radius: 10px;
-    height: 100px;
-    width: 100px;
+    vertical-align: middle;
+    max-height: 20px;
+    max-width: 40px;
+}
+
+.col {
+    max-height: 150px;
+    padding-left: 20px;
 }
