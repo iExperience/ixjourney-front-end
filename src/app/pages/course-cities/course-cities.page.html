@@ -3,24 +3,24 @@
 <div class='container'>
     <div class='row'>
       <div class='col-10 offset-1'>
-          <h4 class='font-weight-bold mb-4 mt-5'>Which city would you like to do iX Full Stack in?</h4>
+          <h4 class='font-weight-bold mb-4 mt-5'>Which city would you like to do iX {{program.name}} in?</h4>
           <p class='mb-3 font-weight-lighter'>Tap and explore. As always, you can change your selection later, even after you submit an application.</p>
       </div>
     </div>
     <div class='row'>
       <div class='col-12'>
-        <div class='image-btn rounded' (click) = 'navToCity()' style="background-image: url('assets/images/capetown.jpg')">
+        <div class='image-btn rounded' *ngFor="let city of availableCities let i=index;" (click)="navToCityInfo(index, city)" style="background-image: url('assets/images/capetown.jpg')">
           <h5 class="text p-3">
-            Cape Town
+            {{city.name}}
           </h5>
         </div>
       </div>
-      <div class='col-12'>
+      <!-- <div class='col-12'>
         <div class='image-btn rounded' (click) = 'navToCity()' style="background-image: url('assets/images/lisbon.jpg')">
           <h5 class="text p-3">
             Lisbon
           </h5>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
