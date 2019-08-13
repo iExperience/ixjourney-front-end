@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-12 text-center'>
       <div class='image-header py-4 px-3' style="background-image: url('assets/images/capetown.jpg')">
-      <h4 class='text font-weight-bold mb-2 mt-0'>Cape Town, South Africa</h4>
+      <h4 class='text font-weight-bold mb-2 mt-0'>{{city.name}}</h4>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
             </div>
           </div>
             <div class='col-12 text-center'>
-              <button type='button' class='roundbutton pink-btn btn-btn-primary btn-lg text-white font-weight-bold' style='font-size: 18px' (click)='navToFinAid()'>Select Cape Town & continue</button>
+              <button type='button' class='roundbutton pink-btn btn-btn-primary btn-lg text-white font-weight-bold' style='font-size: 18px' (click)='navToFinAid()'>Select {{city.name}} & continue</button>
               <p class='mt-3' style='font-size: 12px'><i>Two more steps left to apply. Early apps preferred.</i></p>
           </div>
         </div>
@@ -52,10 +52,10 @@
     <div class='col-12 text-center'>
       <h3 class='font-weight-bold pt-3'>Other city options</h3>
     </div>
-    <div class='col-10 offset-1'>
-      <div class='image-btn rounded mb-4' (click) = 'navToCity()' style="background-image: url('assets/images/lisbon.jpg')">
+    <div class='col-10 offset-1' *ngFor="let city of otherOptions let i=index;" (click) = "navToCityInfo(index, city)">
+      <div class='image-btn rounded mb-4' style="background-image: url('assets/images/lisbon.jpg')">
         <h5 class="text bottom-left pl-3 pb-3">
-          Lisbon
+          {{city.name}}
         </h5>
       </div>
     </div>

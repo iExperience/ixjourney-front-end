@@ -2,8 +2,8 @@
   <div class='row'>
     <div class='col-12 text-center'>
       <div class='image-header py-4 px-3' style="background-image: url('//cdn2.ixperience.co.za/assets/backgrounds/full-stack-main-9ebe7fbb8b778329e9fea2bf24b7bccd5f86def1f41e8e9d55f58632d56f0224.jpg')">
-      <h4 class='text font-weight-bold mb-2 mt-0'>iXperience Full Stack Coding</h4>
-      <p class='text font-weight-lighter mb-5'>Availible in Cape Town and Lisbon</p>
+      <h4 class='text font-weight-bold mb-2 mt-0'>iXperience {{course.name}}</h4>
+      <p class='text font-weight-lighter mb-5'>Available in {{availableCities}}</p>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
               <iframe class="embed-responsive-item" src="//www.youtube.com/embed/wMuNjnNyaiA" allowfullscreen></iframe>
           </div>
           <button type='button' class="roundbutton btn-btn-primary btn-sm font-weight-bold">Email me a brochure</button>
-          <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold mb-2' (click)='navToCourseCities()'>Select & continue</button>
+          <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold' (click)='navToCities()'>Select & continue</button>
         </div>
       </div>
     </div>
@@ -34,22 +34,15 @@
       <h3 class='font-weight-bold'>Other tech course options</h3>
     </div>
     <div class='col-10 offset-1 mt-3'>
-      <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn0.ixperience.co.za/assets/internship/teach-57b7748312633a0df83c337faf5c350475d9e5a278fbfc1eb13727ad746ad601.jpg')">
+      <div class='image-btn rounded' *ngFor="let course of otherOptions let i=index;" (click) = "navToCourseInfo(index, course)" style="background-image: url('http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg')">
         <div class='text-right pr-3 pt-2'>
           <button>6 credits</button>
         </div>
-        <h5 class="text p-3">
-          Data Science
+        <h5 class="text pb-3 p-3">
+            {{course[0].name}}
         </h5>
-      </div>
-    </div>
-    <div class='col-10 offset-1 mt-3'>
-      <div class='image-btn rounded' (click) = 'buttonClick()' style="background-image: url('http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg')">
-        <div class='text-right pr-3 pt-2'>
-          <button>6 credits</button>
-        </div>
-        <h5 class="text p-3">
-          Product Management
+        <h5 class="text pb-3 p-3">
+            {{course[1]}}
         </h5>
       </div>
     </div>
