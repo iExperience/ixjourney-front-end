@@ -2,30 +2,34 @@
   <div class='row'>
     <div class='col-12 text-center'>
       <div class='image-header py-4 px-3' style="background-image: url('assets/images/fullstack.jpg')">
-      <h4 class='text font-weight-bold mb-2 mt-0'>iXperience {{course.name}}</h4>
-      <p class='text font-weight-lighter mb-5'>Available in {{availableCities}}</p>
+        <h4 class='text font-weight-bold mb-2 mt-0'>iXperience {{course.name}}</h4>
+        <p class='text font-weight-lighter mb-5'>Available in {{availableCities}}</p>
+      </div>
     </div>
   </div>
+
 
   <div class="card rounded mb-3">
     <div class="card-body">
       <div class='row'>
         <div class='col-10 offset-1'>
           <div class='text-center'>
-          <img src="assets/images/avatar.jpg" alt='Alum' class='avatar mb-2'>
+            <img src="assets/images/avatar.jpg" alt='Alum' class='avatar mb-2'>
           </div>
           <div class='container' style='background-color: #f3f6f8'>
             <h6 class="card-subtitle mb-2 text-muted"><i>Before iX, I never even typed a single line of code. 
               After 6 weeks, I was able to create a web app for a new building security sign-in method, 
               applying the skills I learned in the classroom in my internship.</i></h6>
-            </div>
+          </div>
           <h6 class='font-weight-bold'>Dates & Credits</h6>
           <p class='font-weight-lighter'>6 weeks, 6 credits, two session options. May 28-August 14 OR June 15-August 20, 2020</p>
           <div class="embed-responsive embed-responsive-16by6" class='mb-2 text-center rounded'>
-              <iframe width="300" height="225" src="https://www.youtube.com/embed/rVwqYQbdd74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="170" src="https://www.youtube.com/embed/rVwqYQbdd74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <button type='button' class="roundbutton btn-btn-primary btn-sm font-weight-bold">Email me a brochure</button>
-          <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold' (click)='navToCities()'>Select & continue</button>
+          <div class='text-center'>
+            <button type='button' class="roundbutton btn-btn-primary btn-sm font-weight-bold" style='font-size: 12px'>Email me a brochure</button>
+            <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold' style='font-size:12px' (click)='navToCities()'>Select & continue</button>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +51,6 @@
             {{course[1]}}
         </p>
       </div>
-    </div>
     </div>
   </div>
 </ion-content>
