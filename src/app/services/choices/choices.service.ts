@@ -37,7 +37,7 @@ export class ChoicesService {
   design: Array<string> = ["Digital Design Course"];
 
   constructor() { 
-    // Constructor populates all arrays, TESTED
+    // Constructor populates all arrays
 
     // Get programs
     fetch('https://students-dev.ixperience.co.za/api/v1/programs.json')
@@ -95,7 +95,7 @@ export class ChoicesService {
   }
 
   /* 
-  TODO Mockups of functions by page
+  Functions by page
     - Fields -> Courses:
       - getProgramsByField(field: string) <-- inputs are tech, business, design
         - search programs array and returns array of programs with that field
@@ -115,9 +115,7 @@ export class ChoicesService {
       - ???? Would this be the description? In which case just getCity would work?
   */
 
-  /* Basic Get/Set for all of the fields in Choices, UNTESTED */
-
-  // TODO for all Set: error checking to make sure id is valid???
+  /* Basic Get/Set for all of the fields in Choices */
 
   getProgram() {
     return this.program;
@@ -221,7 +219,7 @@ export class ChoicesService {
   }
 
 
-  /* FIELDS -> COURSES, UNTESTED */
+  /* FIELDS -> COURSES */
   getProgramsByField(field: string) {
     // initialize array
     var specificPrograms = [];
@@ -269,7 +267,7 @@ export class ChoicesService {
   }
 
 
-  /* COURSES -> COURSE INFO, UNTESTED */
+  /* COURSES -> COURSE INFO */
 
   // helper for getDatesByProgramId
   getPeriodById(period_id: number) {
@@ -305,7 +303,7 @@ export class ChoicesService {
     return specificPeriods;
   }
 
-  /* COURSE INFO -> CITIES, UNTESTED*/
+  /* COURSE INFO -> CITIES */
 
   // helper for getLocationsByProgramId
   getLocationById(location_id: number) {
@@ -341,9 +339,4 @@ export class ChoicesService {
     return specificLocations;
 
   }
-
-  /* CITIES -> CITY INFO */
-
-  // QUESTION: not sure exactly what we do here with the information from the database here? ask about this
-
 }

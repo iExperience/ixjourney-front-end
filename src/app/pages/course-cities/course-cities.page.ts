@@ -17,11 +17,9 @@ export class CourseCitiesPage implements OnInit {
     ) { 
       this.program = this.choicesService.getProgram();
       this.availableCities = this.choicesService.getProgramLocations();
-      console.log(this.availableCities);
     }
 
   navToCityInfo(index, city) {
-    console.log(city);
     this.choicesService.setLocation(city.id);
     this.navCtrl.navigateForward('course-city');
   } 
