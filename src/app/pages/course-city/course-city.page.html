@@ -1,4 +1,4 @@
-<ion-content overflow-scroll="true" class='style'>
+<ion-content overflow-scroll="true">
   <div class='row'>
     <div class='col-12 text-center'>
       <div class='image-header py-4 px-3' style="background-image: url('assets/images/capetown.jpg')">
@@ -10,44 +10,54 @@
     <div class="card-body">
       <div class='row'>
         <div class='col-6'>
-          <img class='card-img rounded thumbnail img-responsive' src="http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg" class='rounded'>
-          <p>Hike famous mountains</p>
+          <div class='image'>
+            <img class='card-img rounded img img-responsive full-width' src="http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg" class='rounded'>
+          </div>
+          <p class='caption'> Hike famous mountains</p>
         </div>
         <div class='col-6'>
-          <img class='card-img rounded thumbnail img-responsive' src="http://cdn3.ixperience.co.za/assets/activities/sunrise-ba671585c754896914a531821f717daff693e80975c68a12981fbb616b18a1de.jpg" class='rounded'>
-          <p>Surf perfect beaches</p>
+          <div class='image'>
+            <img class='card-img rounded img img-responsive full-width' src="http://cdn3.ixperience.co.za/assets/activities/sunrise-ba671585c754896914a531821f717daff693e80975c68a12981fbb616b18a1de.jpg" class='rounded'>
+          </div>
+          <p class='caption'>Surf perfect beaches</p>
         </div>
+      </div>
         <div class='row'>
           <div class='col-6'>
-            <img class='card-img rounded thumbnail img-responsive' src="http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg" class='rounded'>
-            <p>Immerse in rich culture</p>
+            <div class='image'>
+              <img class='card-img rounded img img-responsive full-width' src="http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg" class='rounded'>
+            </div>
+            <p class='caption'>Immerse in rich culture</p>
           </div>
           <div class='col-6'>
-            <img class='card-img rounded thumbnail img-responsive' src="http://cdn3.ixperience.co.za/assets/activities/sunrise-ba671585c754896914a531821f717daff693e80975c68a12981fbb616b18a1de.jpg" class='rounded'>
-            <p>Live the local lifestyle</p>
+            <div class='image'>
+              <img class='card-img rounded img img-responsive full-width' src="http://cdn3.ixperience.co.za/assets/activities/sunrise-ba671585c754896914a531821f717daff693e80975c68a12981fbb616b18a1de.jpg" class='rounded'>
+            </div>
+            <p class='caption'>Live the local lifestyle</p>
           </div>
         </div>
-        <div class='col-10 offset-1 text-center'>
-          <div class="embed-responsive embed-responsive-16by6" class='mb-2'>
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/wMuNjnNyaiA" allowfullscreen></iframe>
+        <div class='row'>
+          <div class='col-10 offset-1 text-center'>
+            <div class="embed-responsive embed-responsive-16by6" class='mb-2'>
+              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/wMuNjnNyaiA" allowfullscreen></iframe>
+            </div>
           </div>
-          <div class='col-12 text-center'>
-            <button type='button' class='roundbutton pink-btn btn-btn-primary btn-lg text-white font-weight-bold' style='font-size: 18px' (click)='navToFinAid()'>Select Cape Town & continue</button>
-            <p class='mt-3' style='font-size: 12px'><i>Two more steps left to apply. Early apps preferred.</i></p>
+            <div class='col-12 text-center'>
+              <button type='button' class='roundbutton pink-btn btn-btn-primary btn-lg text-white font-weight-bold' style='font-size: 18px' (click)='navToFinAid()'>Select Cape Town & continue</button>
+              <p class='mt-3' style='font-size: 12px'><i>Two more steps left to apply. Early apps preferred.</i></p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class='col-12 text-center'>
-    <h3 class='font-weight-bold pt-3'>Other city options</h3>
-  </div>
-  <div class='col-10 offset-1'>
-    <div class='image-btn rounded mb-4' (click) = 'navToCity()' style="background-image: url('assets/images/lisbon.jpg')">
-      <h5 class="text bottom-left pl-3 pb-3">
-        Lisbon
-      </h5>
+    <div class='col-12 text-center'>
+      <h3 class='font-weight-bold pt-3'>Other city options</h3>
     </div>
-  </div>
+    <div class='col-10 offset-1'>
+      <div class='image-btn rounded mb-4' (click) = 'navToCity()' style="background-image: url('assets/images/lisbon.jpg')">
+        <h5 class="text bottom-left pl-3 pb-3">
+          Lisbon
+        </h5>
+      </div>
+    </div>
   </div>
 </ion-content>

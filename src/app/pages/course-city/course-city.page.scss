@@ -1,5 +1,8 @@
-.card-img {
-    height: 20px;
-    width: 40px;
+.image{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:50%;
 }
-
+.image img{
+    position:absolute;
+}
