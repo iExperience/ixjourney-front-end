@@ -1,11 +1,13 @@
-.card-img {
-    border-radius: 10px;
-    vertical-align: middle;
-    max-height: 20px;
-    max-width: 40px;
+.image{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:50%;
+    width: 150px;
+}
+.image img{
+    position:absolute;
 }
 
-.col {
-    max-height: 150px;
-    padding-left: 20px;
+.caption {
+    font-size: 13px;
 }

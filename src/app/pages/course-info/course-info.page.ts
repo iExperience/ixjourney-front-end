@@ -11,12 +11,14 @@ import { Program } from '../../models/program/program';
 export class CourseInfoPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
   course: Program;
+  field: string;
   availableCities: string;
   otherOptions = [];
 
   getCourseInfo() {
     // get all data from choices service (program and associated locations)
     this.course = this.choicesService.getProgram();
+    this.field = this.choicesService.getField();
     let cities = this.choicesService.getProgramLocations();
 
     // get city subtitle for image button header

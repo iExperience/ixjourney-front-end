@@ -1,9 +1,12 @@
 <ion-content overflow-scroll="true">
   <div class='row'>
     <div class='col-12 text-center'>
-      <div class='image-header py-4 px-3' style="background-image: url('//cdn2.ixperience.co.za/assets/backgrounds/full-stack-main-9ebe7fbb8b778329e9fea2bf24b7bccd5f86def1f41e8e9d55f58632d56f0224.jpg')">
-      <h4 class='text font-weight-bold mb-2 mt-0'>iXperience {{course.name}}</h4>
-      <p class='text font-weight-lighter mb-5'>Available in {{availableCities}}</p>
+      <div class='image-header py-4 px-3' style="background-image: url('assets/images/fullstack.jpg')">
+        <div class='pt-5'>
+          <h4 class='text font-weight-bold mb-2 mt-0'>iXperience {{course.name}}</h4>
+          <p class='text font-weight-lighter mb-5 pb-3'>Available in {{availableCities}}</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -12,18 +15,22 @@
       <div class='row'>
         <div class='col-10 offset-1'>
           <div class='text-center'>
-          <img src="http://cdn0.ixperience.co.za/assets/people/stephanie-shin-7bb590a17d9f8bf0e1188db26d11392391c592d3344e1ab0d97e9e977ccd4aee.jpg" alt='Alum' class='avatar mb-2'>
+            <img src="assets/images/avatar.jpg" alt='Alum' class='avatar mb-2'>
           </div>
-          <h6 class="card-subtitle mb-2 text-muted"><i>Before iX, I never even typed a single line of code. 
-            After 6 weeks, I was able to create a web app for a new building security sign-in method, 
-            applying the skills I learned in the clasroom in my internship.</i></h6>
+          <div class='container pb-2' style='background-color: #f3f6f8'>
+            <h6 class="card-subtitle mb-2 pt-3 text-muted"><i>Before iX, I never even typed a single line of code. 
+              After 6 weeks, I was able to create a web app for a new building security sign-in method, 
+              applying the skills I learned in the classroom in my internship.</i></h6>
+          </div>
           <h6 class='font-weight-bold'>Dates & Credits</h6>
           <p class='font-weight-lighter'>6 weeks, 6 credits, two session options. May 28-August 14 OR June 15-August 20, 2020</p>
-          <div class="embed-responsive embed-responsive-16by6" class='mb-2'>
-              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/wMuNjnNyaiA" allowfullscreen></iframe>
+          <div class="embed-responsive embed-responsive-16by6" class='mb-2 text-center rounded'>
+            <iframe width="100%" height="170" src="https://www.youtube.com/embed/rVwqYQbdd74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <button type='button' class="roundbutton btn-btn-primary btn-sm font-weight-bold">Email me a brochure</button>
-          <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold' (click)='navToCities()'>Select & continue</button>
+          <div class='text-center'>
+            <button type='button' class="roundbutton btn-btn-primary btn-sm font-weight-bold p-2" style='font-size: 12px'>Email me a brochure</button>
+            <button type='button' class='roundbutton pink-btn btn-btn-primary btn-sm ml-4 text-white font-weight-bold p-2' style='font-size:12px' (click)='navToCities()'>Select & continue</button>
+          </div>
         </div>
       </div>
     </div>
@@ -31,21 +38,20 @@
 
   <div class='row'>
     <div class='col-12 text-center'>
-      <h3 class='font-weight-bold'>Other tech course options</h3>
+      <h3 class='font-weight-bold'>Other {{field}} course options</h3>
     </div>
     <div class='col-10 offset-1 mt-3'>
-      <div class='image-btn rounded' *ngFor="let course of otherOptions let i=index;" (click) = "navToCourseInfo(index, course)" style="background-image: url('http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg')">
+      <div class='image-btn rounded mb-3' *ngFor="let course of otherOptions let i=index;" (click) = "navToCourseInfo(index, course)" style="background-image: url('http://cdn0.ixperience.co.za/assets/home/immerse-25313772d8e5963c8e60b53d4debff64f7cdb3bdf4d1335299ccc2994ba26445.jpg')">
         <div class='text-right pr-3 pt-2'>
           <button>6 credits</button>
         </div>
-        <h5 class="text pb-3 px-3">
-            {{course[0].name}}<br>
-        </h5>
-        <p class='text px-3 text-white' style='font-size: 14px'>
-            Available in {{course[1]}}
+        <h4 class="text my-0 pt-3 px-3">
+          {{course[0].name}}
+        </h4>
+        <p class="text px-3" style='font-size: 14px'>
+            {{course[1]}}
         </p>
       </div>
-    </div>
     </div>
   </div>
 </ion-content>

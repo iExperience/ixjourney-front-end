@@ -5,6 +5,7 @@ import { Location } from '../../models/location/location'
 import { Period } from '../../models/period/period'
 import { Session } from '../../models/session/session'
 import { ProgramChoice } from '../../models/programChoice/programChoice';
+import { UserService } from '../../services/user/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +37,8 @@ export class ChoicesService {
   business: Array<string> = ["Management Consulting Course", "Investment Finance Course", "Product Management Course"];
   design: Array<string> = ["Digital Design Course"];
 
-  constructor() { 
-    // Constructor populates all arrays, TESTED
+  constructor(private userService: UserService) { 
+    // Constructor populates all arrays
 
     // Get programs
     fetch('https://students-dev.ixperience.co.za/api/v1/programs.json')
@@ -46,7 +47,7 @@ export class ChoicesService {
     })
     .then(data => {
       this.allPrograms = data;
-      console.log(this.allPrograms);
+      // console.log(this.allPrograms);
     })
     .catch(err => {
       console.log(err);
@@ -59,7 +60,7 @@ export class ChoicesService {
     })
     .then(data => {
       this.allLocations = data;
-      console.log(this.allLocations);
+      // console.log(this.allLocations);
     })
     .catch(err => {
       console.log(err);
@@ -72,7 +73,7 @@ export class ChoicesService {
     })
     .then(data => {
       this.allPeriods = data;
-      console.log(this.allPeriods);
+      // console.log(this.allPeriods);
     })
     .catch(err => {
       console.log(err);
@@ -85,21 +86,26 @@ export class ChoicesService {
     })
     .then(data => {
       this.allSessions = data;
-      console.log(this.allSessions);
+      // console.log(this.allSessions);
     })
     .catch(err => {
       console.log(err);
     })
 
+    this.user = this.userService.getUser();
+
     // TODO: get current user from user service
   }
 
   /* 
-  TODO Mockups of functions by page
+  Functions by page
     - Fields -> Courses:
       - getProgramsByField(field: string) <-- inputs are tech, business, design
         - search programs array and returns array of programs with that field
         - create array for each field with the program names in the array for this
+      - addAvailableCities(cities: Array<Location>)
+        - creates a string with the cities array that is gramatically correct
+        - made for the image button subtitle
     - Courses -> Course Info: 
       - getDatesByProgram(program_id: number)
         - search sessions array for sessions with that program, 
@@ -111,13 +117,11 @@ export class ChoicesService {
       - getCitiesByProgram(program: string)
         - searches sessions array for sessions with that program,
           then for each session, get city from city_id and return array with city objects
-    - Cities -> City Info:
-      - ???? Would this be the description? In which case just getCity would work?
   */
 
-  /* Basic Get/Set for all of the fields in Choices, UNTESTED */
-
-  // TODO for all Set: error checking to make sure id is valid???
+  /* 
+  Basic Get/Set for all of the fields in Choices 
+  */
 
   getProgram() {
     return this.program;
@@ -199,7 +203,6 @@ export class ChoicesService {
     return this.programChoice.applicationChoice;
   }
 
-  // QUESTION: should applicationChoice be a string? or boolean? what type????
   setApplicationChoice(applicationChoice: string) {
     this.programChoice.applicationChoice = applicationChoice;
   }  
@@ -221,7 +224,9 @@ export class ChoicesService {
   }
 
 
-  /* FIELDS -> COURSES, UNTESTED */
+  /* 
+  FIELDS -> COURSES 
+  */
   getProgramsByField(field: string) {
     // initialize array
     var specificPrograms = [];
@@ -269,7 +274,9 @@ export class ChoicesService {
   }
 
 
-  /* COURSES -> COURSE INFO, UNTESTED */
+  /* 
+  COURSES -> COURSE INFO 
+  */
 
   // helper for getDatesByProgramId
   getPeriodById(period_id: number) {
@@ -305,7 +312,9 @@ export class ChoicesService {
     return specificPeriods;
   }
 
-  /* COURSE INFO -> CITIES, UNTESTED*/
+  /* 
+  COURSE INFO -> CITIES 
+  */
 
   // helper for getLocationsByProgramId
   getLocationById(location_id: number) {
@@ -341,9 +350,4 @@ export class ChoicesService {
     return specificLocations;
 
   }
-
-  /* CITIES -> CITY INFO */
-
-  // QUESTION: not sure exactly what we do here with the information from the database here? ask about this
-
 }
