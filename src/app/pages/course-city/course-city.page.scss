@@ -2,7 +2,12 @@
     position:relative;
     overflow:hidden;
     padding-bottom:50%;
+    width: 150px;
 }
 .image img{
     position:absolute;
+}
+
+.caption {
+    font-size: 13px;
 }
